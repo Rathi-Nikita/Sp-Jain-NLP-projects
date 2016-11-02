@@ -32,10 +32,10 @@ tokenizer = RegexpTokenizer(r'\w+')
 ### Tokenizing ,Tagging and removing Stop words from tweets
 for i in range(len(raw)):
     clean_token = tokenizer.tokenize(raw[i])
-    java_path = "C:/Program Files/Java/jdk1.8.0_111/bin"
+    java_path = ".../jdk1.8.0_111/bin"
     os.environ['JAVAHOME'] = java_path
-    tagger = ST.StanfordNERTagger('G:/SP Jain BDAP/Project/NLP/stanford-ner-2014-06-16/stanford-ner-2014-06-16/classifiers/english.conll.4class.distsim.crf.ser.gz',
-                       'G:/SP Jain BDAP/Project/NLP/stanford-ner-2014-06-16/stanford-ner-2014-06-16/stanford-ner.jar',encoding = 'utf-8')
+    tagger = ST.StanfordNERTagger('.../stanford-ner-2014-06-16/stanford-ner-2014-06-16/classifiers/english.conll.4class.distsim.crf.ser.gz',
+                       '.../stanford-ner-2014-06-16/stanford-ner-2014-06-16/stanford-ner.jar',encoding = 'utf-8')
     mytweet_tag = tagger.tag(clean_token)
     stop = set(stopwords.words('english'))
     without_stop= [i for i in mytweet_tag if i not in stop]
